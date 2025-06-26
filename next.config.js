@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    unoptimized: process.env.NODE_ENV === 'production',
     remotePatterns: [
       {
         protocol: 'https',
@@ -12,11 +13,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'via.placeholder.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'Bissau.svg',
+        hostname: 'res.cloudinary.com',
       },
     ],
   },
