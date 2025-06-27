@@ -4,8 +4,8 @@ Your go-to Next.js app for exploring world nations through beautiful flags, embl
 
 ## Demo
 
-- [Frontend](https://countries-jp.netlify.app)
-- [Backend](https://countries-jp.netlify.app/api/countries)
+- [Frontend](https://country-hub-jd.vercel.app/)
+- [Backend](https://country-hub-jd.vercel.app/api/countries)
 
 ## Features
 
