@@ -2,9 +2,72 @@
   "data": [
     {
       "id": "GKfrCbCN5f",
-      "title": "What is the name of the capital of Bangladesh?",
-      "answers": ["Dhaka", "Marge", "Bart", "Lisa"],
-      "correct_answer": "Dhaka"
+      "title": "What is the capital of Bangladesh?",
+      "answers": ["Dhaka", "Chittagong", "Khulna", "Rajshahi"],
+      "correct_answer": "Dhaka",
+      "country": "bangladesh"
+    },
+    {
+      "id": "JKLmNpQr7s",
+      "title": "Which country's flag has a maple leaf on it?",
+      "answers": ["Canada", "Australia", "New Zealand", "Jamaica"],
+      "correct_answer": "Canada",
+      "country": "canada"
+    },
+    {
+      "id": "AbCdEfGh9i",
+      "title": "Which of these countries is NOT in Europe?",
+      "answers": ["Egypt", "Spain", "Italy", "Germany"],
+      "correct_answer": "Egypt",
+      "country": "egypt"
+    },
+    {
+      "id": "XyZ123Abc4",
+      "title": "Which country is known as the 'Land of the Rising Sun'?",
+      "answers": ["Japan", "China", "Thailand", "Vietnam"],
+      "correct_answer": "Japan",
+      "country": "japan"
+    },
+    {
+      "id": "Pqr456Stu7",
+      "title": "Which country has the largest population in the world?",
+      "answers": ["India", "China", "United States", "Indonesia"],
+      "correct_answer": "India",
+      "country": "india"
+    },
+    {
+      "id": "Lmn789Opq2",
+      "title": "Which country is home to the Great Barrier Reef?",
+      "answers": ["Australia", "Mexico", "Brazil", "Thailand"],
+      "correct_answer": "Australia",
+      "country": "australia"
+    },
+    {
+      "id": "Def012Ghi3",
+      "title": "Which country is the smallest by land area?",
+      "answers": ["Vatican City", "Monaco", "Nauru", "Maldives"],
+      "correct_answer": "Vatican City"
+    },
+    {
+      "id": "Jkl345Mno6",
+      "title": "Which country is known for the Pyramids of Giza?",
+      "answers": ["Egypt", "Mexico", "Peru", "Sudan"],
+      "correct_answer": "Egypt",
+      "country": "egypt"
+    },
+    {
+      "id": "Uvw678Xyz9",
+      "title": "Which country's flag features a red circle on a white background?",
+      "answers": ["Japan", "Bangladesh", "Turkey", "Tunisia"],
+      "correct_answer": "Japan",
+      "country": "japan"
+    },
+    {
+      "id": "Rst901Tuv5",
+      "title": "Which country is located at the southern tip of Africa?",
+      "answers": ["South Africa", "Nigeria", "Kenya", "Ethiopia"],
+      "correct_answer": "South Africa",
+      "country": "south-africa"
     }
   ]
 }

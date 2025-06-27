@@ -15,7 +15,6 @@ export default function HomePage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
-  const [region, setRegion] = useState('')
 
   useEffect(() => {
     // Fetch countries directly from the API
@@ -49,16 +48,12 @@ export default function HomePage() {
     fetchCountries()
   }, [])
 
-  // Filter countries based on search term and region
+  // Filter countries based on search term
   const filteredCountries = countries.filter(country => {
     const matchesSearch = country.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          (country.capital && country.capital.toLowerCase().includes(searchTerm.toLowerCase()))
-    const matchesRegion = region === '' || (country.region && country.region.toLowerCase() === region.toLowerCase())
-    return matchesSearch && matchesRegion
+    return matchesSearch
   })
-
-  // Get unique regions for filter dropdown
-  const regions = [...new Set(countries.filter(c => c.region).map(c => c.region))].sort()
 
   if (loading) {
     return (
@@ -98,7 +93,7 @@ export default function HomePage() {
       <div className="bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 py-12">
         <Container size="lg">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl font-bold mb-4 text-blue-600 dark:text-blue-400">Explore the World's Flags</h1>
+            <h1 className="text-4xl font-bold mb-4 text-blue-600 dark:text-blue-400">Explore the World&apos;s Flags</h1>
             <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">Discover information about {countries.length} countries and their flags</p>
             
             {/* Search and filter */}
@@ -113,16 +108,6 @@ export default function HomePage() {
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-              <select
-                className="py-3 px-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                value={region}
-                onChange={(e) => setRegion(e.target.value)}
-              >
-                <option value="">All Regions</option>
-                {regions.map(region => (
-                  <option key={region} value={region}>{region}</option>
-                ))}
-              </select>
             </div>
           </div>
         </Container>
@@ -132,7 +117,7 @@ export default function HomePage() {
       <Container size="lg" className="py-12">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold">
-            {region ? `${region} Countries` : 'All Countries'}
+            All Countries
             <span className="text-sm font-normal ml-2 text-gray-500 dark:text-gray-400">({filteredCountries.length})</span>
           </h2>
         </div>
@@ -141,7 +126,7 @@ export default function HomePage() {
           <div className="text-center py-12">
             <p className="text-lg text-gray-500 dark:text-gray-400">No countries found matching your criteria</p>
             <button 
-              onClick={() => {setSearchTerm(''); setRegion('')}} 
+              onClick={() => {setSearchTerm('')}} 
               className="btn btn-primary mt-4"
             >
               <TbRefresh className="mr-2" />
@@ -169,9 +154,6 @@ export default function HomePage() {
                     <TbMapPin className="text-blue-500" />
                     <span>{country.capital || 'N/A'}</span>
                   </div>
-                  {country.region && (
-                    <div className="text-xs text-gray-500 dark:text-gray-400">{country.region}</div>
-                  )}
                 </div>
                 <Link 
                   href={`/countries/${country.slug}`}

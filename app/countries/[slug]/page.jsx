@@ -112,9 +112,6 @@ export default function CountryDetailPage() {
             </div>
             
             <div className="w-full md:w-2/3 text-center md:text-left">
-              <div className="inline-block px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm font-medium mb-2">
-                {country.region || 'Unknown Region'}
-              </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-2 text-gray-900 dark:text-white">{country.name}</h1>
               <p className="text-lg text-gray-600 dark:text-gray-300 mb-4 flex items-center justify-center md:justify-start gap-1">
                 <TbWorld className="text-blue-500" />
