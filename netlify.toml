@@ -12,12 +12,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  force = false
-  conditions = {Role = ["anonymous"]}
-
-[functions]
-  node_bundler = "esbuild"
-  external_node_modules = ["sharp"]
 
 [[headers]]
   for = "/images/*"

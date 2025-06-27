@@ -1,29 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: process.env.NODE_ENV === 'production',
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'upload.wikimedia.org',
-      },
-      {
-        protocol: 'https',
-        hostname: 'flagcdn.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-      },
+    unoptimized: true,
+    domains: [
+      'upload.wikimedia.org',
+      'flagcdn.com',
+      'res.cloudinary.com',
+      'via.placeholder.com'
     ],
   },
-  // Disable static optimization for all pages to ensure fresh data
+  // Enable static optimization for better performance
   reactStrictMode: true,
   swcMinify: true,
-  experimental: {
-    // Disable static generation for all pages
-    appDir: true,
-  }
+  // Needed for Netlify deployment
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
