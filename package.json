@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,mdx,html,markdown}\"",
-    "clean": "rm -rf .next out package-lock.json node_modules && npm install",
-    "export": "next export"
+    "clean": "rm -rf .next out package-lock.json node_modules && npm install"
   },
   "dependencies": {
     "autoprefixer": "10.4.14",

@@ -1,6 +1,6 @@
-# Countries Explorer
+# CountryHub
 
-A Next.js application that displays information about countries around the world, including flags, emblems, and key facts.
+Your go-to Next.js app for exploring world nations through beautiful flags, emblems, and fascinating facts.
 
 ## Demo
 
