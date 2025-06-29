@@ -7,6 +7,80 @@ Your go-to Next.js app for exploring world nations through beautiful flags, embl
 - [Frontend](https://country-hub-jd.vercel.app/)
 - [Backend](https://country-hub-jd.vercel.app/api/countries)
 
+## Project Architecture
+
+```mermaid
+graph TD
+    %% Styles definition
+    classDef frontend fill:#f9d6d2,stroke:#d04a35,stroke-width:2px
+    classDef backend fill:#d2f9d6,stroke:#35d04a,stroke-width:2px
+    classDef data fill:#d2d6f9,stroke:#4a35d0,stroke-width:2px
+    classDef deployment fill:#f9f9d2,stroke:#d0d04a,stroke-width:2px
+
+    %% Frontend
+    Client[Web Client] --> NextJS[Next.js App]
+    NextJS --> Pages[Pages]
+    NextJS --> Components[Components]
+    
+    %% Pages
+    Pages --> HomePage[Home Page<br>/app/page.jsx]
+    Pages --> CountryPage[Country Detail<br>/app/countries/slug/page.jsx]
+    Pages --> QuizPage[Quiz Page<br>/app/quiz/page.jsx]
+    
+    %% Components
+    Components --> UI[UI Components<br>/components]
+    
+    %% Backend
+    NextJS --> APIRoutes[API Routes]
+    APIRoutes --> CountriesAPI[Countries API<br>/app/api/countries/route.js]
+    APIRoutes --> CountryAPI[Country Detail API<br>/app/api/countries/slug/route.js]
+    APIRoutes --> QuizAPI[Quiz API<br>/app/api/quiz/route.js]
+    
+    %% Data
+    CountriesAPI --> CountriesData[Countries Data<br>/data/countries.json]
+    CountryAPI --> CountriesData
+    QuizAPI --> CountriesData
+    
+    %% Utilities
+    CountriesAPI --> Utils[Utilities<br>/utils]
+    CountryAPI --> Utils
+    QuizAPI --> Utils
+    
+    %% Styling
+    NextJS --> Styling[Styling]
+    Styling --> Tailwind[TailwindCSS]
+    Styling --> CSS[Global CSS<br>/app/globals.css]
+    
+    %% Deployment
+    NextJS --> Build[Build Process]
+    Build --> StaticSite[Static Site<br>Netlify/Vercel]
+    
+    %% Apply classes
+    Client:::frontend
+    NextJS:::frontend
+    Pages:::frontend
+    Components:::frontend
+    HomePage:::frontend
+    CountryPage:::frontend
+    QuizPage:::frontend
+    UI:::frontend
+    Styling:::frontend
+    Tailwind:::frontend
+    CSS:::frontend
+    
+    APIRoutes:::backend
+    CountriesAPI:::backend
+    CountryAPI:::backend
+    QuizAPI:::backend
+    Utils:::backend
+    
+    CountriesData:::data
+    
+    Build:::deployment
+    StaticSite:::deployment
+```
+[Learn more](./architecture-diagram.md) about the architecture diagram. ([Spanish](./architecture-diagram-es.md))
+
 ## Features
 
 - **Country List**: Browse all countries with their flags and basic information
