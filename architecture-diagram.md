@@ -4,51 +4,51 @@
 
 ```mermaid
 graph TD
-    %% Definición de estilos
+    %% Styles definition
     classDef frontend fill:#f9d6d2,stroke:#d04a35,stroke-width:2px
     classDef backend fill:#d2f9d6,stroke:#35d04a,stroke-width:2px
     classDef data fill:#d2d6f9,stroke:#4a35d0,stroke-width:2px
     classDef deployment fill:#f9f9d2,stroke:#d0d04a,stroke-width:2px
 
     %% Frontend
-    Client[Cliente Web] --> NextJS[Next.js App]
-    NextJS --> Pages[Páginas]
-    NextJS --> Components[Componentes]
+    Client[Web Client] --> NextJS[Next.js App]
+    NextJS --> Pages[Pages]
+    NextJS --> Components[Components]
     
-    %% Páginas
+    %% Pages
     Pages --> HomePage[Home Page<br>/app/page.jsx]
-    Pages --> CountryPage[Country Detail<br>/app/countries/[slug]/page.jsx]
+    Pages --> CountryPage[Country Detail<br>/app/countries/slug/page.jsx]
     Pages --> QuizPage[Quiz Page<br>/app/quiz/page.jsx]
     
-    %% Componentes
+    %% Components
     Components --> UI[UI Components<br>/components]
     
     %% Backend
     NextJS --> APIRoutes[API Routes]
     APIRoutes --> CountriesAPI[Countries API<br>/app/api/countries/route.js]
-    APIRoutes --> CountryAPI[Country Detail API<br>/app/api/countries/[slug]/route.js]
+    APIRoutes --> CountryAPI[Country Detail API<br>/app/api/countries/slug/route.js]
     APIRoutes --> QuizAPI[Quiz API<br>/app/api/quiz/route.js]
     
-    %% Datos
+    %% Data
     CountriesAPI --> CountriesData[Countries Data<br>/data/countries.json]
     CountryAPI --> CountriesData
     QuizAPI --> CountriesData
     
-    %% Utilidades
-    CountriesAPI --> Utils[Utilidades<br>/utils]
+    %% Utilities
+    CountriesAPI --> Utils[Utilities<br>/utils]
     CountryAPI --> Utils
     QuizAPI --> Utils
     
-    %% Estilos
-    NextJS --> Styling[Estilos]
+    %% Styling
+    NextJS --> Styling[Styling]
     Styling --> Tailwind[TailwindCSS]
-    Styling --> CSS[CSS Global<br>/app/globals.css]
+    Styling --> CSS[Global CSS<br>/app/globals.css]
     
-    %% Despliegue
+    %% Deployment
     NextJS --> Build[Build Process]
     Build --> StaticSite[Static Site<br>Netlify/Vercel]
     
-    %% Aplicar clases
+    %% Apply classes
     Client:::frontend
     NextJS:::frontend
     Pages:::frontend
@@ -80,7 +80,7 @@ graph TD
 - **Next.js App**: The main framework handling both frontend and backend
 - **Pages**: React components representing complete routes
   - **Home Page**: Lists all countries (`/app/page.jsx`)
-  - **Country Detail**: Shows details of a specific country (`/app/countries/[slug]/page.jsx`)
+  - **Country Detail**: Shows details of a specific country (`/app/countries/slug/page.jsx`)
   - **Quiz Page**: Country quiz page (`/app/quiz/page.jsx`)
 - **Components**: Reusable UI elements
 - **Styling**: Styling system
@@ -90,7 +90,7 @@ graph TD
 ### Backend (Next.js API Routes)
 - **API Routes**: Next.js API endpoints system
   - **Countries API**: Returns list of countries (`/app/api/countries/route.js`)
-  - **Country Detail API**: Returns details of a specific country (`/app/api/countries/[slug]/route.js`)
+  - **Country Detail API**: Returns details of a specific country (`/app/api/countries/slug/route.js`)
   - **Quiz API**: Handles quiz logic (`/app/api/quiz/route.js`)
 - **Utilities**: Helper functions for data processing
 
